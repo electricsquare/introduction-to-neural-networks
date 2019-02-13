@@ -95,7 +95,6 @@
 			TODO: show an aside slide explaining how to download other libs.
 		</aside>
 	</section>
-
 	<section>
 		<h2>Why Python?</h2>
 		<p>
@@ -109,20 +108,15 @@
 		<p>
 		Furthermore, python is incredibly widely used for other applications,
 		allowing Python+ML to enhance those massively.
-		(eg. Houdini+scikit-learn [2])
+		(eg. <a href="https://sidefx.com/community/spider-man-into-the-spider-verse/">Houdini+scikit-learn</a>)
+
 		</p>
 	</section>
 </section>
 <section>
-	<h2>What is Machine Learning and how does it relate to Artificial Intelligence?</h2>
+	<h2>What is Machine Learning?</h2>
 	<p>
-		Artificial Intelligence (AI) is the study of intelligent agents that are
-		able to observe their environment and acts appropriately according to
-		their circumstances and goals [1]. It’s a very hard and wishy-washy
-		thing to define.
-	</p>
-	<p>
-		Machine Learning (ML) is a subset of AI, and is when computers are
+		Machine Learning (ML) is a form of computation where a program is
 		designed to solve specific tasks using models and inference, as opposed
 		to relying on explicit hard-coded instructions.
 	</p>
@@ -140,20 +134,44 @@
 	<section>
 		<h2>Supervised Learning</h2>
 		<p>
-			TODO!
+			When a machine learning algorithm attempts to infer a function from <em>labeled</em> training data.
 		</p>
+		<h3>Examples Include</h3>
+		<ul>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+		</ul>
 	</section>
 	<section>
 		<h2>Unsupervised Learning</h2>
 		<p>
-			TODO!
+			When a machine learning algorithm attempts to infer some kind underlying structure to unlabelled data.
 		</p>
+		<h3>Examples Include</h3>
+		<ul>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+		</ul>
 	</section>
 	<section>
 		<h2>Reinforcement Learning</h2>
 		<p>
-			TODO!
+			When a machine learning algorithm seeks to take actions in order to maximize some kind of reward.
 		</p>
+		<h3>Examples Include</h3>
+		<ul>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+			<li>TODO</li>
+		</ul>
 	</section>
 </section>
 <section>
@@ -200,15 +218,50 @@
 </section>
 <section>
 	<h2>Applying the Principle: the MNIST dataset</h2>
-	<p>
-		TODO
-	</p>
+	<img src="img/MnistExamples.png" alt="Rows and Columns of different digits demonstrating the handwriting found in the MNIST database" />
 </section>
 <section>
-	<h2>Demonstration Time!</h2>
-	<p>
-		TODO: slides below this walking through the demonstration
-	</p>
+	<section>
+		<h2>Demonstration Time!</h2>
+		<ol>
+			<li>Setup the project folder and install Python dependencies</li>
+			<li>Download and load the dataset</li>
+			<li>Train and evaluate a neural network on the dataset</li>
+		</ol>
+	</section>
+	<section>
+		<h2>Sorting project and dependencies</h2>
+		<p>
+			Create folder and add a text file called "process_digits.py".
+		</p>
+		<p>
+			Then, ensuring you have Python installed, run:
+			<pre><code class="bash" data-trim>
+				pip install scikit-learn
+				pip install numpy
+			</code></pre>
+		</p>
+	</section>
+	<section>
+		<h2>Downloading <a href="http://yann.lecun.com/exdb/mnist/">the dataset</a></h2>
+		<p>
+			The dataset can be found at
+			<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>.
+		</p>
+		<p>
+			However, we will be using <a href="https://github.com/hsjeong5/MNIST-for-Numpy">MNIST-for-Numpy</a>
+			to download and then load the data into a "process_digits.py". 
+		</p>
+		<aside class="notes">
+			Make sure to show how to edit process_digits.py and run this to make sure that it all works!
+		</aside>
+	</section>
+	<section>
+		<h2>Training and evaluating a neural network</h2>
+		<aside class="notes">
+			Show how we will read the scikit-learn documentation in order to train a neural network!
+		</aside>
+	</section>
 </section>
 <section>
 	<h2>You Turn!</h2>
@@ -228,13 +281,6 @@
 	<p>
 		TODO
 	</p>
-</section>
-<section>
-	<h2>References</h2>
-	<ol>
-		<li><a href="https://www.cs.ubc.ca/~poole/ci.html">https://www.cs.ubc.ca/~poole/ci.html</a></li>
-		<li><a href="https://sidefx.com/community/spider-man-into-the-spider-verse/">https://sidefx.com/community/spider-man-into-the-spider-verse/</a></li>
-	</ol>
 </section>
 			</div>
 		</div>
