@@ -208,6 +208,9 @@
 	<section>
 		<h2>Neural Networks: A Trained Example</h2>
 		<p>
+			So in this example, we want our neural network to take an image of the number $5$ and turn it into the <em>number</em> $5$.
+		</p>
+		<p>
 			<img src="img/5.png" width="224" style="vertical-align:middle" alt="A 28 by 28 pixel handwritten image of the number five">
 			$\rightarrow$ $5$
 		</p>
@@ -215,8 +218,6 @@
 			So the problem is to take a the image we see on the left, essentially an ordered list of 784 numbers, and turn it into the number on the right.
 
 			But we need an algorithm that does this for the huge variety of handwritten numbers we might find out in the world.
-
-			A neural network can do this, but how?
 		</aside>
 	</section>
 	<section>
@@ -228,8 +229,33 @@
 		<aside class="notes">
 			There are many types of neural networks out there, but we will look at a simple case: the linear perceptron.
 
-			You've probably seen many images like this. But what does it mean in the case of our number five?
+			You've probably seen many images like this. So what is going on in order for it to calculate the number five?
+
+			A neural network can do this, but how?
 		</aside>
+	</section>
+	<section>
+		<h2>What do we have?</h2>
+		<ol>
+			<li>We have some layers: $1$ input layer, $1$ output layer and $0$+ <em>hidden</em> layers.</li>
+			<li>Each layer has a number of neurons.</li>
+			<li>The first layer has 784, the last layer has 5.</li>
+			<li>Every neuron in each layer is connected to every neuron in the layer before and after.</li>
+			<li>Each connection, has some kind of <em>weight</em>.</li>
+		</ol>
+	</section>
+	<section>
+		<h2>How does the data flow through the network?</h2>
+		<ol>
+			<li>The input neurons just output the value of the pixel that they correspond to.</li>
+			<li>
+				For all other neurons, we have the following equation:
+				$$
+					a^L_j=\sigma(b^L_j + \sum_{k=1}^{n_L - 1} w^L_{jk} a^{L-1}_k)
+				$$
+				We will explore the meaning of this with drawing now...
+			</li>
+		</ol>
 	</section>
 	<section>
 		<h2>Neural Networks: An Explanation</h2>
@@ -243,17 +269,116 @@
 </section>
 <section>
 	<section>
-		<h2>How to train a network:A single-neuron</h2>
+		<h2>How to train a network: A single-neuron</h2>
 		<p>
-			Maths Time
+			TODO: Add diagram of network + example data
 		</p>
 	</section>
 	<section>
-		<h2>How to train a network:A single-neuron</h2>
+		<h2>The maths of a single neuron</h2>
 		<p>
-			Maths Time
+			We can simplify the maths down to (1 layer, 1 neuron, no activation function $\sigma$):
+			$$
+				a(x)=b + w x
+			$$
+			This closely matches our desired output function:
+			$$
+				y = c + m x
+			$$
 		</p>
 	</section>
+	<section>
+		<h2>Finding $b$ and $w$</h2>
+		<p>
+			We need to train the neural network so that it finds $b$ and $w$ to best fit the data.
+		</p>
+		<p>
+			$$
+				a(x)=b + w x
+			$$
+		</p>
+		<p>
+			We can do this with a cost function.
+		</p>
+		<p>
+			$$
+				C=\sum_{i=0}^{N-1} (y_i - a(x_i))^2
+			$$
+		</p>
+		<p>
+			Where $(x_i, y_i)$ represents each sample from our training data.
+		</p>
+	</section>
+	<section>
+		<h2>Reducing the cost</h2>
+		<p>
+			Now we have a cost, we can calculate a new weight and bias which minimizes the cost:
+		</p>
+		<p>
+			$$
+				w'=-\mu\frac{\partial C}{\partial w}
+			$$
+		</p>
+		<p>
+			$$
+				b'=-\mu\frac{\partial C}{\partial b}
+			$$
+		</p>
+		<p>
+			Here, $\mu$ is what we call the <em>learning rate</em>.
+		</p>
+	</section>
+	<section>
+		<h2>Working through the maths...</h2>
+		<p>
+			$$
+				\frac{\partial C}{\partial w} = \sum_{i=0}^{N-1} 2 x_i (y_i - (b + wx_i))
+			$$
+		</p>
+		<p>
+			$$
+				\frac{\partial C}{\partial b} = \sum_{i=0}^{N-1} 2 (y_i - (b + wx_i))
+			$$
+		</p>
+	</section>
+	<section>
+		<h2>Training the network</h2>
+		<p>
+			TODO: explain how the network is trained (by multiple recalculations of weights and biases).
+		</p>
+	</section>
+	<section>
+		<h2>In conclusion</h2>
+		<p>
+			We have worked through the maths of a single-neuron network.
+		</p>
+		<ol>
+			<li class="fragment">Representing it with a function $a(x)=b + w x$.</li>
+			<li class="fragment">Applying a cost when applied to training data $C=\sum_{i=0}^{N-1} (y_i - a(x_i))^2$.</li>
+			<li class="fragment">Calculating cost derivative w.r.t. $w$ and $b$ $\frac{\partial C}{\partial w}$, $\frac{\partial C}{\partial b}$.</li>
+			<li class="fragment">Obtaining $w'=-\mu\frac{\partial C}{\partial w}$ and $b'=-\mu\frac{\partial C}{\partial b}$.</li>
+			<li class="fragment">Run the above multiple times to train our network.</li>
+		</ol>
+	</section>
+</section>
+<section>
+	<h2>Applying maths to a "full" network</h2>
+	<p>
+		Given $a^L_j=\sigma(b^L_j + \sum_{k=1}^{n_L - 1} w^L_{jk} a^{L-1}_k)$.
+	</p>
+	<p>
+		We can use the same cost function and similarly calculate its derivative w.r.t. all weights and biases.
+	</p>
+	<p>
+		This makes extensive use of the chain rule to <em>backpropagate</em> the cost through the network.
+	</p>
+	<p>
+		Links at the end the presentation show the full maths behind this.
+	</p>
+</section>
+<section>
+	<h2>Before the practical...</h2>
+	<h3>Any Questions?</h3>
 </section>
 <section>
 	<h2>Applying the Principle: the MNIST dataset</h2>
