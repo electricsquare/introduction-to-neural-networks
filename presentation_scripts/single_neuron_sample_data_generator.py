@@ -28,6 +28,9 @@ def main():
     
     ms, cs = numpy.polyfit(xs, ys, 1)
 
+    plt.xlim((-5, 5))
+    plt.ylim((ms * 5 + cs, ms * -5 + cs))
+
     plt.savefig("presentation/img/single-neuron-example-data.svg")
 
 
