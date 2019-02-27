@@ -28,11 +28,14 @@ def main():
     
     ms, cs = numpy.polyfit(xs, ys, 1)
 
+    plt.savefig("presentation/img/single-neuron-example-data.svg")
+
+
     regression_line = ax.plot([-5, 5], [ms * -5 + cs, ms * 5 + cs], color='red', label='y = {:.1f}x + {:.1f}'.format(ms, cs))
     ax.legend(handles=regression_line)
-
-    plt.savefig("presentation/img/single-neuron-example-data.svg")
     
+    plt.savefig("presentation/img/single-neuron-example-data-with-regression-line.svg")
+
     print(xs)
     print(ys)
     for x, y in zip(xs, ys):
