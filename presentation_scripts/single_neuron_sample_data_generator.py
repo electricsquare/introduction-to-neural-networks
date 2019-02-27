@@ -2,6 +2,17 @@ import random
 import matplotlib.pyplot as plt
 import numpy
 
+
+def dcdw_dcdb(xs, ys, w, b):
+    total_w = 0
+    total_b = 0
+    for x, y in zip(xs, ys):
+        total_w += 2 * x * ((b + (w * x)) - y)
+        total_b += 2 * ((b + (w * x)) - y)
+    return total_w, total_b
+
+# TODO: look into https://stackoverflow.com/questions/7130474/3d-vector-field-in-matplotlib
+
 def main():
     m = -0.7
     c = 3
@@ -34,16 +45,57 @@ def main():
     plt.savefig("presentation/img/single-neuron-example-data.svg")
 
 
-    regression_line = ax.plot([-5, 5], [ms * -5 + cs, ms * 5 + cs], color='red', label='y = {:.1f}x + {:.1f}'.format(ms, cs))
+    regression_line = ax.plot([-5, 5], [ms * -5 + cs, ms * 5 + cs], color='red', label='y = {:.2f}x + {:.2f}'.format(ms, cs))
     ax.legend(handles=regression_line)
     
     plt.savefig("presentation/img/single-neuron-example-data-with-regression-line.svg")
+
+    w = 1
+    b = 1
+    mu = 0.1
+
+
+    weights = [(w, b)]
+    print("({}, {})".format(w, b))
+    for i in range(100):
+        dw, db = dcdw_dcdb(xs, ys, w, b)
+        w = w - mu * dw
+        b = b - mu * db
+        weights.append((w, b))
+
 
     print(xs)
     print(ys)
     for x, y in zip(xs, ys):
         print("<tr><th>{:.1f}</th><th>{:.1f}</th></tr>".format(x, y))
 
+
+    def print_weight(index):
+        w, b = weights[index]
+        print("<li class=\"fragment\" value=\"{}\">$w$ = {:.4g}, $b$ = {:.4g}</li>".format(index + 1, w, b))
+
+    # mu is 0.01/0.1
+    print_weight(0)
+    print_weight(1)
+    print_weight(2)
+    print_weight(3)
+    print_weight(4)
+    print_weight(7)
+    print_weight(17)
+    print_weight(25)
+    print_weight(35)
+
+    # mu is 0.001
+    # print_weight(0)
+    # print_weight(1)
+    # print_weight(2)
+    # print_weight(4)
+    # print_weight(7)
+    # print_weight(17)
+    # print_weight(56)
+    # print_weight(125)
+    # print_weight(356)
+    # print_weight(357)
 
 if __name__ == "__main__":
     main()

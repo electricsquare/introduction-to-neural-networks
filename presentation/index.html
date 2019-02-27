@@ -338,7 +338,7 @@
 		</p>
 		<p>
 			$$
-				C=\sum_{i=0}^{N-1} (y_i - a(x_i))^2
+				C=\sum_{i=0}^{N-1} (a(x_i) - y_i)^2
 			$$
 		</p>
 		<p>
@@ -368,20 +368,60 @@
 		<h2>Working through the maths...</h2>
 		<p>
 			$$
-				\frac{\partial C}{\partial w} = \sum_{i=0}^{N-1} 2 x_i (y_i - (b + wx_i))
+				\frac{\partial C}{\partial w} = \sum_{i=0}^{N-1} 2 x_i ((b + wx_i) - y_i)
 			$$
 		</p>
 		<p>
 			$$
-				\frac{\partial C}{\partial b} = \sum_{i=0}^{N-1} 2 (y_i - (b + wx_i))
+				\frac{\partial C}{\partial b} = \sum_{i=0}^{N-1} 2 ((b + wx_i) - y_i)
 			$$
 		</p>
 	</section>
 	<section>
-		<h2>Training the network</h2>
-		<p>
-			TODO: explain how the network is trained (by multiple recalculations of weights and biases).
-		</p>
+		<h2>Example with $\mu=0.01$</h2>
+		<p>$m$ = 0.68, $c$ = 2.75</p>
+		<ol style="font-size: 0.8em;">
+			<li value="1">$w$ = 1.00, $b$ = 1.00</li>
+			<li class="fragment" value="2">$w$ = -1.46, $b$ = 0.95</li>
+			<li class="fragment" value="3">$w$ = 0.30, $b$ = 1.50</li>
+			<li class="fragment" value="4">$w$ = -1.08, $b$ = 1.52</li>
+			<li class="fragment" value="5">$w$ = -0.10, $b$ = 1.86</li>
+			<li class="fragment" value="8">$w$ = -0.77, $b$ = 2.16</li>
+			<li class="fragment" value="18">$w$ = -0.68, $b$ = 2.66</li>
+			<li class="fragment" value="26">$w$ = -0.68, $b$ = 2.73</li>
+			<li class="fragment" value="36">$w$ = -0.68, $b$ = 2.75</li>
+		</ol>
+	</section>
+	<section>
+		<h2>Example with $\mu=0.001$</h2>
+		<p>$m$ = 0.68, $c$ = 2.75</p>
+		<ol style="font-size: 0.8em;">
+			<li value="1">$w$ = 1.00, $b$ = 1.00</li>
+			<li value="2">$w$ = 0.75, $b$ = 1.00</li>
+			<li value="3">$w$ = 0.55, $b$ = 1.00</li>
+			<li value="5">$w$ = 0.24, $b$ = 1.01</li>
+			<li value="8">$w$ = -0.05, $b$ = 1.06</li>
+			<li value="18">$w$ = -0.40, $b$ = 1.28</li>
+			<li value="57">$w$ = -0.56, $b$ = 1.97</li>
+			<li value="126">$w$ = -0.64, $b$ = 2.50</li>
+			<li value="357">$w$ = -0.68, $b$ = 2.74</li>
+			<li value="358">$w$ = -0.68, $b$ = 2.75</li>
+		</ol>
+	</section>
+	<section>
+		<h2>Example with $\mu=0.1$</h2>
+		<p>$m$ = 0.68, $c$ = 2.75</p>
+		<ol style="font-size: 0.8em;">
+			<li value="1">$w$ = 1.00, $b$ = 1.00</li>
+			<li value="2">$w$ = -23.61, $b$ = 0.54</li>
+			<li value="3">$w$ = 373.85, $b$ = 59.07</li>
+			<li value="4">$w$ = -6166, $b$ = -937.5</li>
+			<li value="5">$w$ = 1.015e+05, $b$ = 1.549e+04</li>
+			<li value="8">$w$ = -4.535e+08, $b$ = -6.919e+07</li>
+			<li value="18">$w$ = -6.652e+20, $b$ = -1.015e+20</li>
+			<li value="26">$w$ = -3.599e+30, $b$ = -5.49e+29</li>
+			<li value="36">$w$ = -5.279e+42, $b$ = -8.054e+41</li>
+		</ol>
 	</section>
 	<section>
 		<h2>In conclusion</h2>
@@ -390,11 +430,21 @@
 		</p>
 		<ol>
 			<li class="fragment">Representing it with a function $a(x)=b + w x$.</li>
-			<li class="fragment">Applying a cost when applied to training data $C=\sum_{i=0}^{N-1} (y_i - a(x_i))^2$.</li>
+			<li class="fragment">Applying a cost when applied to training data $C=\sum_{i=0}^{N-1} (a(x_i) - y_i)^2$.</li>
 			<li class="fragment">Calculating cost derivative w.r.t. $w$ and $b$ $\frac{\partial C}{\partial w}$, $\frac{\partial C}{\partial b}$.</li>
 			<li class="fragment">Obtaining $w'=-\mu\frac{\partial C}{\partial w}$ and $b'=-\mu\frac{\partial C}{\partial b}$.</li>
 			<li class="fragment">Run the above multiple times to train our network.</li>
+			<li class="fragment">Choose a good $\mu$!</li>
 		</ol>
+	</section>
+	<section>
+		<h2>Any Questions?</h2>
+		<p class="fragment">
+			What glaring flaw do you potentially see with our values for $w$ and $b$?
+		</p>
+		<p class="fragment">
+			What about the model overall?
+		</p>
 	</section>
 </section>
 <section>
