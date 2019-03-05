@@ -203,6 +203,14 @@ Here, TODO XI YI each represent a sample from our training data. If we can find 
 
 #### Reducing the Cost
 
+What devious trick can we use to reduce the cost? Calculus! Specifically, partial differentiation. If you don't know what that is, then TODO: Explanation.
+
+So, how can we use partial derivatives to reduce our cost? By finding the gradient of the cost function relative to a given weight or bias. Then, we can just nudge our cost *down* the gradient a *tiny bit*, theoretically making it a *bit* smaller. Voila (TODO: accents), now we have an improved weight and an improved bias value!
+
+TODO: grab equeations from presentation.
+
+#### Working Through the Maths
+
 TODO: Adapt from presentation
 
 ## The Practice
