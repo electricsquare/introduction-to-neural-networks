@@ -127,8 +127,13 @@ Although you have probably *heard* of neural networks at some point in your life
 
 Go to **[playground.tensorflow.org](https://playground.tensorflow.org)** and have a play around with the Neural Network there to get a feel for how they work. Don't about trying to understand what everything means, just get a feel for what kind of structure that we will be dealing with and then at the end of this workshop you will be able to come back to this page and *really* understand what is happening.
 
+[![A screenshot of the result I achieved with the spiral data on playground.tensorflow.org](presentation\img\playground_tensorflow_spiral.png)](https://playground.tensorflow.org/#activation=tanh&regularization=L1&batchSize=10&dataset=spiral&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.003&noise=0&networkShape=8,4&seed=0.79101&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
-TODO: Continue section
+> What kind of result can you achieve with the spiral?
+
+### Neural Networks: A Trained Example
+
+TODO: Adapt from presentation
 
 ## The Practice
 
