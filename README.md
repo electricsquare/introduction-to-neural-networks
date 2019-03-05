@@ -133,6 +133,40 @@ Go to **[playground.tensorflow.org](https://playground.tensorflow.org)** and hav
 
 ### Neural Networks: A Trained Example
 
+So now let's look at a neural network that has been trained to recognize images. For example, if given a handwritten number like this:
+
+![a handwritten number 5](presentation/img/5.png)
+
+It would output the number '5'.
+
+So, what is this network actually doing? We can imagine it as some kind of function, *f(* **x** *)*.
+
+What is **x** in this case? It's a multi-dimensional vector of 784 values, each representing the value of a pixel in a 28 · 28 image.
+
+#### The parts of a neural network
+
+So what does this network actually look like? Something like this:
+
+![diagram of a perceptron](presentation/img/perceptron_example.png)
+
+The above image is an example of a type of neural network called a *perceptron*. It is one of the very first types of neural networks ever designed, and one of the simplest in design.
+
+So, what is actually going on here?
+
+Data flows from left-to-right, so as you can see, we have neurons divided into multiple *layers*. The column on the left represents the *input layer*, where each 'neuron' represents our raw input. The column on the right is the *output layer*, with the neurons there representing our output. All other layers are known as *hidden layers*.
+
+Perceptrons always have 1 input layer, 1 output layer and 0+ hidden layers. Also every neuron in a given layer is always connected to everyone neuron from the previous and subsequent layers. Other types of neural networks do not always have this property.
+
+Finally, each connection has some kind of *weight*, so whilst every perceptron has the same layout given a number of layers and neurons, it's the values of the *weights* which determine what a network is capable. When a network *learns* it is setting the values of these weights so that it can complete the task at hand.
+
+TODO: add weight equation
+
+So how would a perceptron recognize a number? Basically, the weights connecting the 784 input neurons to the final output are *somehow set through machine learning* so that the neural network will correct identify a number with a reasonable amount of accuracy.
+
+How does this work? Let's look at a simple example.
+
+### How to Train a Network
+
 TODO: Adapt from presentation
 
 ## The Practice
