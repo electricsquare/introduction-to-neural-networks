@@ -49,6 +49,7 @@ Furthermore, Python is incredibly widely used as a scripting language for other 
 
 ![Example of machine learning being used to assist the 2D inking of 3D Spider-Verse frames](presentation/img/spiderverse-inkline-example.jpg)
 
+> Machine learning allowed inking to be predicted for frames in Spider-Man, speeding up the workflow.
 
 ## The Background
 
@@ -72,14 +73,17 @@ Deciding which one of these can solve a given problem is a good way to narrow do
 
 ### Supervised Machine Learning
 
-This is when a machine learning algorithm attempts to infer a function from labeled training data.
+Supervised machine learning is when a machine learning algorithm attempts to infer a function from labeled training data. A good example of this would be something like translation: you provide a machine learning algorithm with many equivalent pieces of text in two languages. Then, you tell it to convert text it has never seen before from one language into another. [This is how Google Translate works.](https://ai.googleblog.com/2016/11/zero-shot-translation-with-googles.html) However, it takes things to the *next level* by being able to translate between two languages it has never directly compared before.
 
-TODO: explain example
+![a diagram demonstrating how Google Translate can translate between Korean and Japanese, despite only having seen comparisons between English & Japanese and English & Korean](presentation/img/google-translate-example.gif)
 
-  - The MNIST Database
-  - MariFlow
-  - Google Translate
-  - TensorFlow Playground
+> Although Google Translate learns how to translate between two languages by being trained on many examples, it can also translate between pairs it has never *directly* compared before. This is a very sophisticated real-world example of supervised machine learning. 
+
+Other examples of supervised machine learning include:
+
+  - [The MNIST Database](http://yann.lecun.com/exdb/mnist/)
+  - [MariFlow](https://www.youtube.com/watch?v=Ipi40cb_RsI)
+  - [TensorFlow Playground](https://playground.tensorflow.org)
 
 ### Unsupervised Machine Learning
 
