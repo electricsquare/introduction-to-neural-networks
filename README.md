@@ -165,7 +165,43 @@ So how would a perceptron recognize a number? Basically, the weights connecting 
 
 How does this work? Let's look at a simple example.
 
-### How to Train a Network
+### How to Train a Network: A Single Neuron
+
+Let's look at a simple network with only a single neuron:
+
+TODO: add diagram from slides
+
+As you can see, it takes some input, *x*, multiplies it by a weight, *w*, and adds a bias *b*.
+
+This simple 'network' can't really model much, but it should be able to handle the following data:
+
+TODO: add diagram from slides
+
+As you can see, we could fairly easily imagine a line-of-best fit passing through this data. Using linear-regression, you might get something like this:
+
+TODO: add diagram from slides.
+
+However, we will use the neural-network method of learning here: *gradient descent*. 
+
+#### The Maths of a Single Neuron
+
+As the diagram showed, this neural network can be modelled by the functions:
+
+*a(x) = b + wx*
+
+We can see how this could easily model our desired output function:
+
+*y = c + mx*
+
+#### Finding *b* and *w*
+
+We need to a way to train the neural network so that it can calculate a weight and bias that will best fit the data. We can do this with a cost function:
+
+TODO: Add cost function
+
+Here, TODO XI YI each represent a sample from our training data. If we can find some general method that will automatically change *b* and *w* in order to *reduce the cost*, then we are chips and gravy.
+
+#### Reducing the Cost
 
 TODO: Adapt from presentation
 
