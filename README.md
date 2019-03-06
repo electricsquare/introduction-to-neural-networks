@@ -233,5 +233,38 @@ TODO: Write overview of section
 
 ### The MNIST Dataset
 
-TODO: Adapt from presentation
+We will be training a neural network on the [MINST handwritten digit database](http://yann.lecun.com/exdb/mnist/), which has a pretty self-explanatory name.
 
+![A sample of the MNIST database showing scans of handwritten numbers](presentation/img/MnistExamples.png)
+
+It's a good problem for an introduction to machine learning. As the handwritten database has a lot of data in 60,000 training examples and 10,000 test examples, it is easier to train and verify the effectiveness of a machine learning algorithm. Furthermore, perceptrons can perform relatively well when it comes to this task - other tasks can require more advanced neural networks.
+
+### Training a Neural Network
+
+What we are going to be doing consists of three steps:
+
+  - Setup the project folder and install Python dependencies
+  - Download and load the dataset
+  - Train and evaluate a neural network on the dataset
+
+
+#### Sorting the Project and Dependencies
+
+Create a folder and add a text file called "process_digits.py".
+
+Then, ensuring you have Python installed, run the following in the terminal or console:
+
+```
+pip install scikit-learn
+pip install numpy
+```
+
+#### Downloading the Dataset
+
+The dataset can be found at [yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/).
+
+However, we will be using a handy library called [MNIST-for-Numpy](https://github.com/hsjeong5/MNIST-for-Numpy) to download and then load the data into "process_digits.py".
+
+#### Training and evaluating a neural network
+
+TODO: Finishe the README
