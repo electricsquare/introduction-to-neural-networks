@@ -207,13 +207,31 @@ What devious trick can we use to reduce the cost? Calculus! Specifically, partia
 
 So, how can we use partial derivatives to reduce our cost? By finding the gradient of the cost function relative to a given weight or bias. Then, we can just nudge our cost *down* the gradient a *tiny bit*, theoretically making it a *bit* smaller. Voila (TODO: accents), now we have an improved weight and an improved bias value!
 
-TODO: grab equeations from presentation.
+TODO: grab equations from presentation.
 
 #### Working Through the Maths
 
 TODO: Adapt from presentation
 
+#### Examples
+
+Please look at the slides found TODO (link to anchor in slides), in order to see how different learning factors affect how *w* and *b* are found.
+
+Finding a good learning factor for a given problem is really a matter of trial and error, and it still a topic that is actively researched. As you can see, if your learning factor is too small, it can take many iterations before we converge on a solution! If it is too big, then we won't converge on anything at all.
+
+### Applying the Maths to a Full Network
+
+We can use the same cost function and similarly calculate its derivative w.r.t. all weights and biases.
+
+This makes extensive use of the chain rule to backpropagate the cost through the network.
+
+Some of the further reading links at the end show the full maths behind this. 
+
 ## The Practice
+
+TODO: Write overview of section
+
+### The MNIST Dataset
 
 TODO: Adapt from presentation
 
