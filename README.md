@@ -159,7 +159,17 @@ Perceptrons always have 1 input layer, 1 output layer and 0+ hidden layers. Also
 
 Finally, each connection has some kind of *weight*, so whilst every perceptron has the same layout given a number of layers and neurons, it's the values of the *weights* which determine what a network is capable. When a network *learns* it is setting the values of these weights so that it can complete the task at hand.
 
-TODO: add weight equation
+The value of the output of the *j*th neuron in a given layer *L* is:
+
+![An equation giving the output of a neuron as some function (σ) being applied to the sum of previous layer outputs multiplied by a weight with a bias added to it.](presentation/img/eq_neuron_activation_function.png)
+
+Where *b* is a bias and the *a*s & *w*s represent the outputs of the previous layer multiplied by some weights. Finally, a function *σ* is applied to the entire thing (more on that later). This is called an *activation function*, but in this case we will be using the *sigmoid function*:
+
+![The sigmoid function, e to the power of x over 1 + e to the power of x](presentation/img/sigmoid_function.png)
+
+The sigmoid function restricts the range of the output to a value between 0 and 1:
+
+![A graph of the sigmoid logistics curve, showing how it forms an 'S' shape that tends towards 1 at inputs > 6 and to 0 at inputs < -6.](presentation/img/logistics_curve.png)
 
 So how would a perceptron recognize a number? Basically, the weights connecting the 784 input neurons to the final output are *somehow set through machine learning* so that the neural network will correct identify a number with a reasonable amount of accuracy.
 
@@ -319,3 +329,11 @@ Let's look at how to do this: TODO:
   - [Machine Learning Course](https://www.coursera.org/learn/machine-learning) by Andrew Ng at Stanford
   - [scikit-learn user guide](https://scikit-learn.org/stable/user_guide.html)
 
+## Sources
+
+TODO: Sources and attribution
+
+
+### Images
+
+ - [The Logistics Curve](img/presentation/logistics_curve): [Wikimedia](https://en.wikipedia.org/wiki/Sigmoid_function#/media/File:Logistic-curve.svg)
