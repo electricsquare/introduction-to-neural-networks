@@ -57,7 +57,7 @@ Furthermore, Python is incredibly widely used as a scripting language for other 
 
 Machine Learning (ML) is a form of computation where a program is designed to solve specific tasks using models and inference, as opposed to relying on explicit hard-coded instructions.
 
-Whilst fairly easy to define, this doesn't really help understand anything about *how* machine learning works. However, it does help us understand what makes it so *powerful*. Essentially it means that forms of computation exist which allows us to solve problems that *to this day* we wouldn't be able to solve otherwise with explicit instructions. 
+Whilst fairly easy to define, this doesn't really help understand anything about *how* machine learning works. However, it does help us understand what makes it so *powerful*. Essentially it means that forms of computation exist which allows us to solve problems that *to this day* we wouldn't be able to solve otherwise with explicit instructions.
 
 No one knows how to write a 'recognize face' algorithm, but we have trained generic machine learning algorithms to recognize faces for us.
 
@@ -77,7 +77,7 @@ Supervised machine learning is when a machine learning algorithm attempts to inf
 
 ![a diagram demonstrating how Google Translate can translate between Korean and Japanese, despite only having seen comparisons between English & Japanese and English & Korean](presentation/img/google-translate-example.gif)
 
-> Although Google Translate learns how to translate between two languages by being trained on many examples, it can also translate between pairs it has never *directly* compared before. This is a very sophisticated real-world example of supervised machine learning. 
+> Although Google Translate learns how to translate between two languages by being trained on many examples, it can also translate between pairs it has never *directly* compared before. This is a very sophisticated real-world example of supervised machine learning.
 
 Other examples of supervised machine learning include:
 
@@ -181,7 +181,7 @@ As you can see, we could fairly easily imagine a line-of-best fit passing throug
 
 TODO: add diagram from slides.
 
-However, we will use the neural-network method of learning here: *gradient descent*. 
+However, we will use the neural-network method of learning here: *gradient descent*.
 
 #### The Maths of a Single Neuron
 
@@ -225,7 +225,7 @@ We can use the same cost function and similarly calculate its derivative w.r.t. 
 
 This makes extensive use of the chain rule to backpropagate the cost through the network.
 
-Some of the further reading links at the end show the full maths behind this. 
+Some of the further reading links at the end show the full maths behind this.
 
 ## The Practice
 
@@ -284,7 +284,12 @@ python minst.py
 You should see:
 
 ```
-TODO: MNIST DOWNLOAD RESULTS
+Downloading train-images-idx3-ubyte.gz...
+Downloading t10k-images-idx3-ubyte.gz...
+Downloading train-labels-idx1-ubyte.gz...
+Downloading t10k-labels-idx1-ubyte.gz...
+Download complete.
+Save complete.
 ```
 
 Then, to confirm everything has been successful run:
@@ -299,7 +304,7 @@ You should see:
 We have successfully loaded the MNIST data!
 ```
 
-TODO: link to example folder in GitHub repository
+You can see what this all looks like in the example folder [01_downloading_the_minst_database](examples/01_downloading_the_mnist_databse).
 
 Now we are ready to start training a neural network using this data!
 
