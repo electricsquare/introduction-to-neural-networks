@@ -267,4 +267,12 @@ However, we will be using a handy library called [MNIST-for-Numpy](https://githu
 
 #### Training and evaluating a neural network
 
-TODO: Finishe the README
+Let's look at how to do this: TODO:
+
+## Useful Resources
+
+  - [Neural Networks](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) by 3blue1Brown
+  - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) by Michael Nielsen
+  - [Machine Learning Course](https://www.coursera.org/learn/machine-learning) by Andrew Ng at Stanford
+  - [scikit-learn user guide](https://scikit-learn.org/stable/user_guide.html)
+
