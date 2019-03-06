@@ -127,7 +127,7 @@ Although you have probably *heard* of neural networks at some point in your life
 
 Go to **[playground.tensorflow.org](https://playground.tensorflow.org)** and have a play around with the Neural Network there to get a feel for how they work. Don't about trying to understand what everything means, just get a feel for what kind of structure that we will be dealing with and then at the end of this workshop you will be able to come back to this page and *really* understand what is happening.
 
-[![A screenshot of the result I achieved with the spiral data on playground.tensorflow.org](presentation\img\playground_tensorflow_spiral.png)](https://playground.tensorflow.org/#activation=tanh&regularization=L1&batchSize=10&dataset=spiral&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.003&noise=0&networkShape=8,4&seed=0.79101&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
+[![A screenshot of the result I achieved with the spiral data on playground.tensorflow.org](presentation/img/playground_tensorflow_spiral.png)](https://playground.tensorflow.org/#activation=tanh&regularization=L1&batchSize=10&dataset=spiral&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.003&noise=0&networkShape=8,4&seed=0.79101&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
 > What kind of result can you achieve with the spiral?
 
@@ -179,17 +179,31 @@ How does this work? Let's look at a simple example.
 
 Let's look at a simple network with only a single neuron:
 
-TODO: add diagram from slides
+![Diagram of a neural network with only a single neuron, taking a single weighted input value and bias to produce an output.](presentation/img/single_neuron_network.png)
 
 As you can see, it takes some input, *x*, multiplies it by a weight, *w*, and adds a bias *b*.
 
 This simple 'network' can't really model much, but it should be able to handle the following data:
 
-TODO: add diagram from slides
+| $x$  | $y$  |
+| ---- | ----:|
+| -2.0 | 4.4  |
+| 3.7  | 0.5  |
+| 4.7  | -0.3 |
+| 1.0  | 1.4  |
+| 3.4  | 0.4  |
+| 1.9  | 1.4  |
+| 0.5  | 2.0  |
+| 3.7  | 0.5  |
+| -3.7 | 5.6  |
+| -1.4 | 3.5  |
+
+![A diagram of the data from the table plotted onto a graph. the points form some kind of downwards slope.](presentation/img/single-neuron-example-data.svg)
 
 As you can see, we could fairly easily imagine a line-of-best fit passing through this data. Using linear-regression, you might get something like this:
 
-TODO: add diagram from slides.
+![The same diagram of the graph as before, but with a regression line running through the data. The line has the equation: y = -0.68x + 2.75.](presentation/img/single-neuron-example-data-with-regression-line.svg)
+
 
 However, we will use the neural-network method of learning here: *gradient descent*.
 
@@ -314,7 +328,7 @@ You should see:
 We have successfully loaded the MNIST data!
 ```
 
-You can see what this all looks like in the example folder [01_downloading_the_minst_database](examples/01_downloading_the_mnist_databse).
+You can see what this all looks like in the example folder [examples/01_downloading_the_minst_database](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples/01_downloading_the_mnist_database).
 
 Now we are ready to start training a neural network using this data!
 
