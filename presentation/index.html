@@ -251,7 +251,7 @@
 			<li>
 				For all other neurons, we have the following equation:
 				$$
-					a^L_j=\sigma(b^L_j + \sum_{k=1}^{n_L - 1} w^L_{jk} a^{L-1}_k)
+					a^L_j=\sigma(b^L_j + \sum_{k=1}^{n_{L-1}} w^L_{jk} a^{L-1}_k)
 				$$
 				We will explore the meaning of this with drawing now...
 			</li>
@@ -370,12 +370,12 @@
 		</p>
 		<p>
 			$$
-				w'=-\mu\frac{\partial C}{\partial w}
+				w'=w-\mu\frac{\partial C}{\partial w}
 			$$
 		</p>
 		<p>
 			$$
-				b'=-\mu\frac{\partial C}{\partial b}
+				b'=b-\mu\frac{\partial C}{\partial b}
 			$$
 		</p>
 		<p>
@@ -453,7 +453,7 @@
 			<li class="fragment">Representing it with a function $a(x)=b + w x$.</li>
 			<li class="fragment">Applying a cost when applied to training data $C=\sum_{i=0}^{N-1} (a(x_i) - y_i)^2$.</li>
 			<li class="fragment">Calculating cost derivative w.r.t. $w$ and $b$ $\frac{\partial C}{\partial w}$, $\frac{\partial C}{\partial b}$.</li>
-			<li class="fragment">Obtaining $w'=-\mu\frac{\partial C}{\partial w}$ and $b'=-\mu\frac{\partial C}{\partial b}$.</li>
+			<li class="fragment">Obtaining $w'=w-\mu\frac{\partial C}{\partial w}$ and $b'=b-\mu\frac{\partial C}{\partial b}$.</li>
 			<li class="fragment">Run the above multiple times to train our network.</li>
 			<li class="fragment">Choose a good $\mu$!</li>
 		</ol>
@@ -484,7 +484,7 @@
 <section>
 	<h2>Applying maths to a "full" network</h2>
 	<p>
-		Given $a^L_j=\sigma(b^L_j + \sum_{k=1}^{n_L - 1} w^L_{jk} a^{L-1}_k)$.
+		Given $a^L_j=\sigma(b^L_j + \sum_{k=1}^{n_{L-1}} w^L_{jk} a^{L-1}_k)$.
 	</p>
 	<p>
 		We can use the same cost function and similarly calculate its derivative w.r.t. all weights and biases.
