@@ -250,7 +250,7 @@ What we are going to be doing consists of three steps:
 
 #### Sorting the Project and Dependencies
 
-Create a folder and add a text file called "process_digits.py".
+Create a folder and add a text file called `process_digits.py`.
 
 Then, ensuring you have Python installed, run the following in the terminal or console:
 
@@ -263,7 +263,45 @@ pip install numpy
 
 The dataset can be found at [yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/).
 
-However, we will be using a handy library called [MNIST-for-Numpy](https://github.com/hsjeong5/MNIST-for-Numpy) to download and then load the data into "process_digits.py".
+However, we will be using a handy library called [MNIST-for-Numpy](https://github.com/hsjeong5/MNIST-for-Numpy) to download and then load the data into `process_digits.py`.
+
+Download the dataset is really straightforward, all we need to do is put a copy of the `mnist.py` file in the same directory as `process_digits.py`. Then, just write the following in `process_digits.py`:
+
+```python
+import mnist
+
+training_images, training_labels, test_images, test_labels = mnist.load()
+
+print("We have successfully loaded the MNIST data!")
+```
+
+Then, run the following in the terminal:
+
+```bash
+python minst.py
+```
+
+You should see:
+
+```
+TODO: MNIST DOWNLOAD RESULTS
+```
+
+Then, to confirm everything has been successful run:
+
+```bash
+python process_digits.py
+```
+
+You should see:
+
+```
+We have successfully loaded the MNIST data!
+```
+
+TODO: link to example folder in GitHub repository
+
+Now we are ready to start training a neural network using this data!
 
 #### Training and evaluating a neural network
 
