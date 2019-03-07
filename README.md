@@ -48,11 +48,13 @@ Presented by [Tom Read Cutting](https://moosichu.github.io).
 
 This workshop has 4 goals:
 
-  - Introduce you to the wide and wonderful field of Machine Learning
-  - Explain the theory behind simple Neural Networks, one of the most popular machine learning algorithms out there
+  - Introduce you to the wide and wonderful field of Machine Learning.
+  - Explain the theory behind simple Neural Networks, one of the most popular machine learning algorithms out there.
   - Complete a fun neural network challenge: writing a neural network that can recognise handwritten digits from the [MNIST database](http://yann.lecun.com/exdb/mnist/).
+
     ![A sample of the MNIST database showing scans of handwritten numbers](presentation/img/MnistExamples.png)
-  - Introduce you to a wide array of resources for further learning
+
+  - Introduce you to a wide array of resources for further learning.
 
 ### Pre-Requisites
 
