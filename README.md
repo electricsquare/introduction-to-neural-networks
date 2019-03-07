@@ -432,10 +432,13 @@ And we are done (for now)! My plan is to the expand the content here based on fe
 
 ## Sources
 
-TODO: Sources and attribution
-
-
 ### Images
 
- - [The Logistics Curve](img/presentation/logistics_curve.png): [Wikimedia](https://en.wikipedia.org/wiki/Sigmoid_function#/media/File:Logistic-curve.svg)
- - [Perceptron Example](img/presentation/perceptron_example.png): [scikit-learn](https://scikit-learn.org/stable/_images/multilayerperceptron_network.png)
+  - [The Logistics Curve](img/presentation/logistics_curve.png): [Wikimedia](https://en.wikipedia.org/wiki/Sigmoid_function#/media/File:Logistic-curve.svg)
+  - [Perceptron Example](img/presentation/perceptron_example.png): [scikit-learn](https://scikit-learn.org/stable/_images/multilayerperceptron_network.png)
+  - [The Number 5](img/presentation/5.png) and [MnistExamples](img/presentation/MnistExamples.png): [The MNIST Database](http://yann.lecun.com/exdb/mnist/)
+  - [Google Translate Example](img/presentation/google-translate-example.gif): [Zero-Shot Translation with Google's Multilingual Neural Machine Translation System](https://ai.googleblog.com/2016/11/zero-shot-translation-with-googles.html)
+  - [MarI/O Screenshot](img/presentation/marIO.png): [MarI/O](https://www.youtube.com/watch?v=qv6UVOQ0F44)
+  - [Spider-Verse Inkline Example](img/presentation/spiderverse-inkline-exmple/jpg): [Spider-Man: Into the Spider-Verse](https://www.sidefx.com/community/spider-man-into-the-spider-verse/)
+  - [playground.tensorflow.org spiral](img/presentation/playgruond_tensorflow_spiral.png): [playground.tensorflow.org](https://playground.tensorflow.org)
+  - [fake person](img/presentation/fake-person.jpg): [thispersondoesnotexist.com](https://thispersondoesnotexist.com/)
