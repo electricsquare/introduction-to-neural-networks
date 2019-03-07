@@ -34,6 +34,10 @@ Presented by [Tom Read Cutting](https://moosichu.github.io).
     - [Training a Neural Network](#training-a-neural-network)
       - [Sorting the Project and Dependencies](#sorting-the-project-and-dependencies)
       - [Downloading the Dataset](#downloading-the-dataset)
+      - [Training and evaluating a neural network](#training-and-evaluating-a-neural-network)
+  - [The End](#the-end)
+  - [Useful Resources](#useful-resources)
+  - [Sources](#sources)
 
 ## Introduction
 
