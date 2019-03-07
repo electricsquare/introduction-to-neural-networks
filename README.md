@@ -8,7 +8,32 @@ Presented by [Tom Read Cutting](https://moosichu.github.io).
 
 ## Table of Contents
 
-TODO
+  - [Introduction](#introduction)
+    - [Overview](#overview)
+    - [Pre-Requisites](#pre-requisites)
+      - [Aside: Why Python?](#aside-why-python)
+  - [The Background](#the-background)
+    - [What is machine learning?](#what-is-machine-learning)
+    - [Types of machine learning](#types-of-machine-learning)
+    - [Supervised Machine Learning](#supervised-machine-learning)
+    - [Unsupervised Machine Learning](#unsupervised-machine-learning)
+    - [Reinforcement Machine Learning](#reinforcement-machine-learning)
+  - [The Theory](#the-theory)
+    - [An Example of Neural Networks](#an-example-of-neural-networks)
+    - [Neural Networks: A Trained Example](#neural-networks-a-trained-example)
+      - [The parts of a neural network](#the-parts-of-a-neural-network)
+    - [How to Train a Network: A Single Neuron](#how-to-train-a-network-a-single-neuron)
+      - [The Maths of a Single Neuron](#the-maths-of-a-single-neuron)
+      - [Finding *b* and *w*](#finding-b-and-w)
+      - [Reducing the Cost](#reducing-the-cost)
+      - [Working Through the Maths](#working-through-the-maths)
+      - [Examples](#examples)
+    - [Applying the Maths to a Full Network](#applying-the-maths-to-a-full-network)
+  - [The Practice](#the-practice)
+    - [The MNIST Dataset](#the-mnist-dataset)
+    - [Training a Neural Network](#training-a-neural-network)
+      - [Sorting the Project and Dependencies](#sorting-the-project-and-dependencies)
+      - [Downloading the Dataset](#downloading-the-dataset)
 
 ## Introduction
 
@@ -337,7 +362,62 @@ Now we are ready to start training a neural network using this data!
 
 #### Training and evaluating a neural network
 
-Let's look at how to do this: TODO:
+Now we are loading the data into the python script, we can feed it into a neural network by using **[scikit-learn](https://scikit-learn.org)**. Scikit-learn is a very powerful and user-friendly machine learning library for Python, with capabilities far beyond the realms of neural networks. It is itself a good source for learning about various machine learning algorithms.
+
+So, let's go the [User Guide](https://scikit-learn.org/stable/user_guide.html) so we can explore how train a neural network on the data that we have.
+
+We will be working with a supervised neural network, so we can open [the documentation for that](https://scikit-learn.org/stable/modules/neural_networks_supervised.html). Specifically, we would like to create [a classifier that classifies images as numbers](https://scikit-learn.org/stable/modules/neural_networks_supervised.html#classification).
+
+The example there is useful for working out how to set things up, but it can be quite hard to work out what is going on. So we will jump to [the documentation for MLPClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier), the class that we are about to use. Now you will hopefully recognise terms like `activation`, `hidden_layer`, `learning_rate` and more. A lot of these options are unfortunately out of scope for this workshop, and is one of the reasons why jumping into machine learning can be overwhelming. So let's configure the ones that we know about to turn our `process_digits.py` script into the following:
+
+
+```python
+import mnist
+from sklearn.neural_network import MLPClassifier
+
+training_images, training_labels, test_images, test_labels = mnist.load()
+
+classifier = MLPClassifier(
+  solver='sgd', # Use stochastic gradient descent solver
+  activation="logistic", # Use the sigmoid activation function
+  hidden_layer_sizes=(14, 14), # Set the hidden layer sizes 
+  learning_rate='constant', # Set a constant learning rate
+  learning_rate_init=0.01,  # Initialize the learning rate
+  max_iter=100
+)
+
+classifier.fit(training_images, training_labels)
+
+predicted_labels = classifier.predict(test_images)
+```
+
+We have some predictions! That's great. But how do we actually evaluate the quality of our neural network? By comparing the results of our predictions to the test_labels. So let's do that:
+
+```python
+num_correct = 0
+for predicted_label, test_label in zip(predicted_labels, test_labels):
+
+  if predicted_label == test_label:
+    num_correct = num_correct + 1
+
+score = num_correct/len(predicted_labels)
+
+print("We have a score of {}".format(score))
+```
+The full example script can be found in the example folder [examples/02_training_and_testing_the_network](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples/02_training_and_testing_the_network).
+
+Running `process_digits.py` can take a fair amount of time to complete. But once it finishes you should get something like the following as output:
+
+```
+We have a score of 0.8725
+```
+
+Now the question is, can you improve what we have done here?
+
+## The End
+
+And we are done (for now)! My plan is to the expand the content here based on feedback, but by now you should have enough knowledge to start diving into the [Useful Resources](#useful-resources). Trying going back to the [TensorFlow Playground](https://playground.tensorflow.org) and seeing what you now can understand. One of the big uncovered topics is [regularization](http://neuralnetworksanddeeplearning.com/chap3.html#overfitting_and_regularization), which I intend to add here in the near future. Feel free to ask any questions and give feedback as a [GitHub issue](https://github.com/moosichu/introduction-to-neural-networks/issues). You could also look at all the options in [the documentation for MLPClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier) as a next step. I hope you found this useful!
+
 
 ## Useful Resources
 
@@ -353,4 +433,5 @@ TODO: Sources and attribution
 
 ### Images
 
- - [The Logistics Curve](img/presentation/logistics_curve): [Wikimedia](https://en.wikipedia.org/wiki/Sigmoid_function#/media/File:Logistic-curve.svg)
+ - [The Logistics Curve](img/presentation/logistics_curve.png): [Wikimedia](https://en.wikipedia.org/wiki/Sigmoid_function#/media/File:Logistic-curve.svg)
+ - [Perceptron Example](img/presentation/perceptron_example.png): [scikit-learn](https://scikit-learn.org/stable/_images/multilayerperceptron_network.png)
