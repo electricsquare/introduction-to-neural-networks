@@ -152,13 +152,13 @@ Other examples of reinforcement machine learning include:
 
 ## The Theory
 
-Now that we have covered some background and given some basic information about the field of machine learning, lets move onto a concrete example of a machine learning algorithm: Neural Networks.
+Now that we have covered some background and given some basic information about the field of machine learning, let's move onto a concrete example of a machine learning algorithm: Neural Networks.
 
 ### An Example of Neural Networks
 
 Although you have probably *heard* of neural networks at some point in your life by now if you are vaguely interested in computers, it's still a good idea to familiarize yourself with what they look like and how they behave before jumping into understanding what is going on under-the-hood.
 
-Go to **[playground.tensorflow.org](https://playground.tensorflow.org)** and have a play around with the Neural Network there to get a feel for how they work. Don't about trying to understand what everything means, just get a feel for what kind of structure that we will be dealing with and then at the end of this workshop you will be able to come back to this page and *really* understand what is happening.
+Go to **[playground.tensorflow.org](https://playground.tensorflow.org)** and have a play around with the Neural Network there to get a feel for how they work. Don't worry about trying to understand what everything means, just get a feel for what kind of structure that we will be dealing with and then at the end of this workshop you will be able to come back to this example and *really* understand what is happening.
 
 [![A screenshot of the result I achieved with the spiral data on playground.tensorflow.org](presentation/img/playground_tensorflow_spiral.png)](https://playground.tensorflow.org/#activation=tanh&regularization=L1&batchSize=10&dataset=spiral&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.003&noise=0&networkShape=8,4&seed=0.79101&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
@@ -307,6 +307,8 @@ What we are going to be doing consists of three steps:
   - Download and load the dataset
   - Train and evaluate a neural network on the dataset
 
+Everything will be explained below in a step-by-step process, however the final results of each step is given in the [examples folder](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples).
+
 
 #### Sorting the Project and Dependencies
 
@@ -319,23 +321,15 @@ pip install scikit-learn
 pip install numpy
 ```
 
+Now we have installed the machine learning library that we need and created a file to write our machine learning program.
+
 #### Downloading the Dataset
 
-The dataset can be found at [yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/).
+For this step we will download the dataset that we will be training with: [the MNIST database](http://yann.lecun.com/exdb/mnist/). The setup you will have at the end of this step can be found in [examples/01_downloading_the_minst_database](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples/01_downloading_the_mnist_database).
 
-However, we will be using a handy library called [MNIST-for-Numpy](https://github.com/hsjeong5/MNIST-for-Numpy) to download and then load the data into `process_digits.py`.
+We will use a handy library called [MNIST-for-Numpy](https://github.com/hsjeong5/MNIST-for-Numpy) to download the data for us and then use it to load the data into our program. 
 
-Download the dataset is really straightforward, all we need to do is put a copy of the `mnist.py` file in the same directory as `process_digits.py`. Then, just write the following in `process_digits.py`:
-
-```python
-import mnist
-
-training_images, training_labels, test_images, test_labels = mnist.load()
-
-print("We have successfully loaded the MNIST data!")
-```
-
-Then, run the following in the terminal:
+Go to the [MNIST-for-Numpy](https://github.com/hsjeong5/MNIST-for-Numpy) GitHub repository to grab a copy of the `mnist.py` file. Put this file in the same directory you created `process_digits.py`. Open a terminal in this directory and run:
 
 ```bash
 python minst.py
@@ -352,7 +346,17 @@ Download complete.
 Save complete.
 ```
 
-Then, to confirm everything has been successful run:
+This means that the library has downloaded the database for us. Now we can use it to load the database into our program. Just write the following in `process_digits.py`:
+
+```python
+import mnist
+
+training_images, training_labels, test_images, test_labels = mnist.load()
+
+print("We have successfully loaded the MNIST data!")
+```
+
+Then, run the following to confirm that everything has been successful:
 
 ```bash
 python process_digits.py
@@ -364,11 +368,13 @@ You should see:
 We have successfully loaded the MNIST data!
 ```
 
-You can see what this all looks like in the example folder [examples/01_downloading_the_minst_database](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples/01_downloading_the_mnist_database).
+You can see how this all comes together in [examples/01_downloading_the_minst_database](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples/01_downloading_the_mnist_database).
 
 Now we are ready to start training a neural network using this data!
 
 #### Training and evaluating a neural network
+
+For this step, we will be adding to our `process_digits.py` script in multiple steps to write a program that will train and evaluate a neural network. The result of this step is available in [examples/02_training_and_testing_the_network](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples/02_training_and_testing_the_network).
 
 Now we are loading the data into the python script, we can feed it into a neural network by using **[scikit-learn](https://scikit-learn.org)**. Scikit-learn is a very powerful and user-friendly machine learning library for Python, with capabilities far beyond the realms of neural networks. It is itself a good source for learning about various machine learning algorithms.
 
@@ -399,7 +405,7 @@ classifier.fit(training_images, training_labels)
 predicted_labels = classifier.predict(test_images)
 ```
 
-We have some predictions! That's great. But how do we actually evaluate the quality of our neural network? By comparing the results of our predictions to the test_labels. So let's do that:
+We have some predictions! That's great. But how do we actually evaluate the quality of our neural network? By comparing the results of our predictions to the test_labels. So let's do that by adding this to our script:
 
 ```python
 num_correct = 0
@@ -412,15 +418,24 @@ score = num_correct/len(predicted_labels)
 
 print("We have a score of {}".format(score))
 ```
+
 The full example script can be found in the example folder [examples/02_training_and_testing_the_network](https://github.com/moosichu/introduction-to-neural-networks/tree/master/examples/02_training_and_testing_the_network).
 
-Running `process_digits.py` can take a fair amount of time to complete. But once it finishes you should get something like the following as output:
+Now run `process_digits.py`:
+
+```bash
+python process_digits.py
+```
+
+This process can take a fair amount of time to complete. But once it finishes you should get something like the following as output:
 
 ```
 We have a score of 0.8725
 ```
 
 Now the question is, can you improve what we have done here?
+
+<!-- TODO: write ideas for how to improve this score -->
 
 ## The End
 
