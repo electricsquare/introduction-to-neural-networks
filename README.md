@@ -198,7 +198,7 @@ The value of the output of the *j*th neuron in a given layer *L* is:
 
 Where *b<sup>L</sup><sub>j</sub>* is a bias and *a<sup>L-1</sup><sub>k</sub>* *w<sup>L</sup><sub>jk</sub>* represent the outputs of the previous layer being multiplied by their weights. Finally, a function *σ* is applied to the entire thing. This is called an *activation function*, but in this case we will be using the *sigmoid function*:
 
-<img src="presentation/img/sigmoid_function.png" alt="The sigmoid function, e to the power of x over 1 + e to the power of x" width=400 />
+<img src="presentation/img/sigmoid_function.png" alt="The sigmoid function, e to the power of x over 1 + e to the power of x" width=330 />
 
 The sigmoid function restricts the range of the output to a value between 0 and 1:
 
@@ -213,8 +213,6 @@ How does this work? Let's look at a simple example.
 Let's look at a simple network with only a single neuron:
 
 <img src="presentation/img/single_neuron_network.png" alt="Diagram of a neural network with only a single neuron, taking a single weighted input value and bias to produce an output." width=400 />
-
-![Diagram of a neural network with only a single neuron, taking a single weighted input value and bias to produce an output.](presentation/img/single_neuron_network.png)
 
 As you can see, it takes some input, *x*, multiplies it by a weight, *w*, and adds a bias *b*. We will ignore the idea of an activation function for now.
 
@@ -256,7 +254,7 @@ We can see how this could easily model our desired output function:
 
 We need to a way to train the neural network so that it can calculate a weight and bias that will best fit the data. We can do this with a cost function:
 
-![The cost function equation, the some of the squares of the difference of the output of the neuron for a given x and the actual corresponding y value.](presentation/img/cost_function.png)
+<img src="presentation/img/cost_function.png" alt="The cost function equation, the some of the squares of the difference of the output of the neuron for a given x and the actual corresponding y value." width=350 />
 
 Here, x<sub>i</sub> and y<sub>i</sub> each represent a sample from our training data. If we can find some general method that will automatically change *b* and *w* in order to *reduce the cost*, then we are chips and gravy.
 
@@ -271,7 +269,7 @@ So, how can we use partial derivatives to reduce our cost? By finding the gradie
 
 So, what does the partial derivative actually like in practice? And how does it exactly help us improve *w* and *b*? Well, the equation below shows exactly how that happens:
 
-![The partial derivatives the cost with respect to w and b multiplied by negative μ.](presentation/img/partial_derivatives.png)
+<img src="presentation/img/partial_derivatives.png" alt="The partial derivatives the cost with respect to w and b multiplied by negative μ." width=300 />
 
 Here μ represents the *little bit* we nudge *w* and *b* by in order to calculate their new values. We take the negative gradient as we want to *decrease* the cost.
 
