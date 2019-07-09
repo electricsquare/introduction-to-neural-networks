@@ -194,7 +194,7 @@ Finally, each connection has some kind of *weight*, so whilst every perceptron h
 
 The value of the output of the *j*th neuron in a given layer *L* is:
 
-<img src="presentation/img/eq_neuron_activation_function.png" alt="An equation giving the output of a neuron as some function (σ) being applied to the sum of previous layer outputs multiplied by a weight with a bias added to it." width=400 />
+<img src="presentation/img/eq_neuron_activation_function.png" alt="An equation giving the output of a neuron as some function (σ) being applied to the sum of previous layer outputs multiplied by a weight with a bias added to it." width=500 />
 
 Where *b<sup>L</sup><sub>j</sub>* is a bias and *a<sup>L-1</sup><sub>k</sub>* *w<sup>L</sup><sub>jk</sub>* represent the outputs of the previous layer being multiplied by their weights. Finally, a function *σ* is applied to the entire thing. This is called an *activation function*, but in this case we will be using the *sigmoid function*:
 
