@@ -41,7 +41,7 @@ Presented by [Tom Read Cutting](https://moosichu.github.io).
 
 ## Introduction
 
-- **[Presentation](https://moosichu.github.io/introduction-to-neural-networks/presentation/index.html)**
+- **[Presentation](https://electricsquare.github.io/introduction-to-neural-networks/presentation/index.html)**
 
 
 ### Overview
@@ -275,7 +275,7 @@ Here μ represents the *little bit* we nudge *w* and *b* by in order to calculat
 
 #### Examples
 
-Please look at [the slides showing how a network learns](https://moosichu.github.io/introduction-to-neural-networks/presentation/index.html#learning-factor-affects), in order to see how different learning factors affect how *w* and *b* are found.
+Please look at [the slides showing how a network learns](https://electricsquare.github.io/introduction-to-neural-networks/presentation/index.html#learning-factor-affects), in order to see how different learning factors affect how *w* and *b* are found.
 
 Finding a good learning factor for a given problem is really a matter of trial and error, and it still a topic that is actively researched. As you can see, if your learning factor is too small, it can take many iterations before we converge on a solution! If it is too big, then we won't converge on anything at all.
 
