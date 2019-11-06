@@ -4,7 +4,7 @@
 
 Brought to you by [Electric Square](https://www.electricsquare.com/).
 
-Presented by [Tom Read Cutting](https://moosichu.github.io).
+Created and Presented by [Tom Read Cutting](https://moosichu.github.io).
 
 ## Table of Contents
 
