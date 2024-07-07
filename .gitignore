@@ -129,3 +129,5 @@ dmypy.json
 
 # End of https://www.gitignore.io/api/python
 
+# PyCharm IDE files
+.idea/
